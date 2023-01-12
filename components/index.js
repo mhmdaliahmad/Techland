@@ -1,0 +1,16 @@
+export {default as Footer} from './Footer';
+export {default as Cart} from './Cart';
+export {default as FooterBanner} from './FooterBanner';
+export {default as HeroBanner} from './HeroBanner';
+export {default as Layout} from './Layout';
+export {default as Product} from './Product';
+export {default as Navbar} from './Navbar';
+export {default as Speak} from './Speak';
+export {default as Apple} from './Apple';
+export {default as Pod} from './Pod';
+export {default as Tab} from './Tab';
+export {default as Head} from './Head';
+export {default as Cover} from './Cover';
+export {default as Pc} from './Pc';
+export {default as Charger} from './Charger';
+export {default as Categories} from './Categories';

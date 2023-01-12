@@ -1,0 +1,72 @@
+
+.container {
+    padding: 5px;
+    display: flex;
+    background-color: rgb(204, 204, 204);
+    ;
+  }
+  
+  .item {
+    flex: 1;
+  }
+  
+  .table {
+    width: 100%;
+    border-spacing: 20px;
+    text-align: left;
+    table-layout:fixed;
+    
+    
+  }
+  .button1{
+    border-radius: 3px;
+    border: 5px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+  }
+  .button1:hover{
+    transform: scale(1.03,1.03);
+    background-color: rgb(52, 52, 52);
+
+  }
+  .button {
+    border-radius: 3px;
+    border: 5px;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+  }
+  .button:hover{
+    transform: scale(1.03,1.03);
+    background-color: rgb(255, 43, 43);
+
+  }
+  .address{
+    align-items: flex-start;
+    padding: 15px;
+    font-weight: 500;
+
+  }
+  .phone{
+    padding: 15px;
+    padding-left: 75px;
+    font-size: 14px;
+    font-weight: 650;
+  }
+  .city{
+    padding-left: 20px;
+  }
+  .email {
+    width: 200px;
+    font-size: 12px;
+    padding: 0;
+    font-weight: 700;
+
+  }
+  .total{
+    padding-left: 35px;
+    font-weight: 700;
+  }
