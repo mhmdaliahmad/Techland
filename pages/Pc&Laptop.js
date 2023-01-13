@@ -13,7 +13,7 @@ const PcAndLaptop = ({pc}) => {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 
   const pcQuery = '*[_type == "pc"]';
   const pc = await client.fetch(pcQuery);

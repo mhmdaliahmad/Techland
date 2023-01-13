@@ -5,6 +5,7 @@ import styles from "../../styles/Admin.module.css";
 
 const Index = ({ orders }) => {  
   const [orderList, setOrderList] = useState(orders);
+  
   const handleDelete = async (id) => {
     console.log(id);
     try {
@@ -24,10 +25,10 @@ const Index = ({ orders }) => {
       <div className={styles.item}>
         <h1 className={styles.title}>Orders</h1>
         <a href="https://techland.sanity.studio/desk">
-        <button className={styles.button1}>Manage Products</button>
+        <button className={styles.button1}>Manage Items</button>
         </a>
         <table className={styles.table}>
-          <tbody>
+          <thead>
             <tr className={styles.trTitle}>
               <th>Customer</th>
               <th>Email Address</th>
@@ -39,19 +40,19 @@ const Index = ({ orders }) => {
               <th>item</th>
               <th className={styles.total}>Total</th>
             </tr>
-          </tbody>
+          </thead>
           {orderList?.map((order) => (
             <tbody key={order._id}>
               <tr className={styles.trTitle}>
-                <td className={styles.id}>{order.customer}</td>
-                <td  className={styles.email}>{order.email}</td>
-                <td className={styles.phone}>{order.phoneNumber}</td>
-                <td className={styles.phone}>{order.news}</td>
-                <td className={styles.address}>{order.city}</td>
-                <td className={styles.address}>{order.address}</td>
-                <td className={styles.address}>{order.apartment}</td>
-                <td>{order.itemName} ({order.itemPrice}$ x{order.itemQty})</td>
-                <td className={styles.total}>${order.total}</td>
+                <td className={styles.id} data-label="Customer">{order.customer}</td>
+                <td  className={styles.email} data-label="Email Address">{order.email}</td>
+                <td className={styles.phone} data-label="Phone Number">{order.phoneNumber}</td>
+                <td className={styles.phone} data-label="News">{order.news}</td>
+                <td className={styles.address} data-label="City">{order.city}</td>
+                <td className={styles.address} data-label="Address">{order.address}</td>
+                <td className={styles.address} data-label="Apartment">{order.apartment}</td>
+                <td data-label="Item">{order.itemName} ({order.itemPrice}$ x{order.itemQty})</td>
+                <td className={styles.total} data-label="Total">${order.total}</td>
                 <td>   
                   <button
                     className={styles.button}
@@ -68,17 +69,7 @@ const Index = ({ orders }) => {
   );
 };
 
-export const getServerSideProps = async (ctx) => {
-  const myCookie = ctx.req?.cookies || "";
-
-  if (myCookie.token !== process.env.TOKEN) {
-    return {
-      redirect: {
-        destination: "/admin/login",
-        permanent: false,
-      },
-    };
-  }
+export const getStaticProps = async () => {
 
   const orderRes = await axios.get("http://localhost:3000/api/orders");
 

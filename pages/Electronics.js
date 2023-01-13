@@ -19,7 +19,7 @@ const Electronics = ({speaker}) => {
 
 
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 
   const speakerQuery = '*[_type == "speaker"]';
   const speaker = await client.fetch(speakerQuery);

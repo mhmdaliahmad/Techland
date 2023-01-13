@@ -13,7 +13,7 @@ const ChargersAndCables = ({charger}) => {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 
   const chargerQuery = '*[_type == "charger"]';
   const charger = await client.fetch(chargerQuery);
