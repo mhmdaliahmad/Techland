@@ -13,7 +13,7 @@ const CoverAndAccessories = ({cover}) => {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 
   const coverQuery = '*[_type == "cover"]';
   const cover = await client.fetch(coverQuery);

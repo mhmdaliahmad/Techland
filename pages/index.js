@@ -89,7 +89,14 @@ const Home = ({products, bannerData, speaker, apple, pod, tab, cover,pc, charger
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+  let admin = false;
+
+  if (myCookie.token === process.env.TOKEN) {
+    admin = true;
+  }
+
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
 

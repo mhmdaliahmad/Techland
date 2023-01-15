@@ -13,7 +13,7 @@ const PodsAndEarPhones = ({pod}) => {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 
   const podQuery = '*[_type == "pod"]';
   const pod = await client.fetch(podQuery);

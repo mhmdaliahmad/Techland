@@ -13,7 +13,7 @@ const AppleProducts = ({apple}) => {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 
   const appleQuery = '*[_type == "apple"]';
   const apple = await client.fetch(appleQuery);

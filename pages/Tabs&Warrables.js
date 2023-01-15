@@ -13,7 +13,7 @@ const TabsAndWarrables = ({tab}) => {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 
   const tabQuery = '*[_type == "tab"]';
   const tab = await client.fetch(tabQuery);

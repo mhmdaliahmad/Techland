@@ -13,7 +13,7 @@ const HeadphonesAndSpeakers = ({headphone}) => {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 
   const headphoneQuery = '*[_type == "headphone"]';
   const headphone = await client.fetch(headphoneQuery);

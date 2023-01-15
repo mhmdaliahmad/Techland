@@ -69,14 +69,24 @@ const Index = ({ orders }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+
+  if (myCookie.token !== process.env.TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/login",
+        permanent: false,
+      },
+    };
+  }
 
   const orderRes = await axios.get("http://localhost:3000/api/orders");
 
   return {
     props: {
       orders: orderRes.data,
-    },
+    },    
   };
 };
 

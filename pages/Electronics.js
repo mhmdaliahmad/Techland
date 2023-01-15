@@ -1,6 +1,5 @@
 import React from 'react'
 import { Speak } from '../components';
-import ReactPaginate from 'react-paginate';
 
 import { client } from '../lib/client'
 

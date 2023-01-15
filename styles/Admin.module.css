@@ -19,8 +19,6 @@
     
   }
   .table td,.table th{
-    padding: 12px 15px;
-    border: 1px solid rgba(186, 186, 186, 0.332);
     text-align: center;
   }
   .table th{
