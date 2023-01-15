@@ -129,7 +129,7 @@ export const getServerSideProps = async (ctx) => {
 
 
   return {
-    props: { products , bannerData, speaker, apple, pod, tab, cover, pc, charger }
+    props: { products , bannerData, speaker, apple, pod, tab, cover, pc, charger, admin }
   }
   
 }
