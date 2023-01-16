@@ -123,7 +123,7 @@ export const getServerSideProps = async () => {
 
 
   return {
-    props: { products , bannerData, speaker, apple, pod, tab, cover, pc, charger, admin }
+    props: { products , bannerData, speaker, apple, pod, tab, cover, pc, charger }
   }
   
 }
