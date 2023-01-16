@@ -16,10 +16,8 @@ const OrderDetails = ({total,  itemName, itemPrice, itemQty}) => {
     const handleClick = () => {
       createOrder({  itemName, itemPrice, itemQty, address, phoneNumber, customer, total, email, apartment, city,  news });
     };
-    const handleChange = () => {
-      setNews();
-    };
   return (
+
     <div className={styles.container}>  
         <div className={styles.wrapper}>
             <h1 className={styles.title}>Contact information</h1>
@@ -86,6 +84,7 @@ const OrderDetails = ({total,  itemName, itemPrice, itemQty}) => {
         </button>
       </div>
     </div>
+
   );
 };
 

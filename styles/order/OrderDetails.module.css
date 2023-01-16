@@ -25,6 +25,7 @@
   .title {
     font-weight: 400;
     font-size: 25px;
+
   }
   
   .item {
@@ -77,13 +78,14 @@
     margin-top: 5px;
     cursor: pointer;
   }
-  @media screen and (max-width:820px) {
+  @media screen and (max-width:850px) {
     .wrapper {
 height: 100%;
 font-weight: 600;
   }
   .button {
     margin-top: 20px;
+    margin-bottom: 100px;
     height: 55px;
     width: 250px;
   }
