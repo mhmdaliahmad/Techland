@@ -13,6 +13,9 @@ export const StateContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
   const [orderList, setOrderList] = useState([]);
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [error, setError] = useState(false);
   const router = useRouter();
 
 
@@ -56,6 +59,15 @@ export const StateContext = ({ children }) => {
       }
     } catch (err) {
       console.log(err);
+    }
+  };
+  const login = async () => {
+    
+    try {
+      await axios.post("http://localhost:3000/api/login",);
+      router.push("/admin");
+    } catch (err) {
+      setError(true);
     }
   };
 
@@ -118,8 +130,14 @@ export const StateContext = ({ children }) => {
         setTotalQuantities ,
         createOrder,
         orderList,
-        setOrderList
-
+        setOrderList,
+        login,
+        password,
+        setPassword,
+        error,
+        setError,
+        username,
+        setUsername
       }}
     >
       {children}

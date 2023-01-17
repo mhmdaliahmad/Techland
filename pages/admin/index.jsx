@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import styles from "../styles/Admin.module.css";
+import styles from "../../styles/Admin.module.css";
 
 const Index = ({ orders }) => {  
   const [orderList, setOrderList] = useState(orders);
@@ -69,7 +69,19 @@ const Index = ({ orders }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+
+  if (myCookie.token !== process.env.TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/login",
+        permanent: false,
+      },
+    };
+  }
+
+
   const orderRes = await axios.get("http://localhost:3000/api/orders");
 
   return {
