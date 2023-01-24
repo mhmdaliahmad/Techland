@@ -30,28 +30,28 @@ const Index = ({ orders }) => {
         <table className={styles.table}>
           <thead>
             <tr className={styles.trTitle}>
-              <th>Customer</th>
-              <th>Email Address</th>
+              <th className={styles.customer}>Customer</th>
+              <th className={styles.emai1}>Email Address</th>
               <th className={styles.phone}>Phone Number</th>
               <th className={styles.phone}>News</th>
               <th className={styles.city}>City</th>
               <th>Address</th>
               <th>Appartment</th>
-              <th>item</th>
+              <th className={styles.itemName}>item</th>
               <th className={styles.total}>Total</th>
             </tr>
           </thead>
           {orderList?.map((order) => (
             <tbody key={order._id}>
               <tr className={styles.trTitle}>
-                <td className={styles.id} data-label="Customer">{order.customer}</td>
-                <td  className={styles.email} data-label="Email Address">{order.email}</td>
+                <td className={styles.customer} data-label="Customer">{order.customer}</td>
+                <td className={styles.email} data-label="Email Address">{order.email}</td>
                 <td className={styles.phone} data-label="Phone Number">{order.phoneNumber}</td>
                 <td className={styles.phone} data-label="News">{order.news}</td>
                 <td className={styles.address} data-label="City">{order.city}</td>
                 <td className={styles.address} data-label="Address">{order.address}</td>
                 <td className={styles.address} data-label="Apartment">{order.apartment}</td>
-                <td data-label="Item">{order.itemName} ({order.itemPrice}$ x{order.itemQty})</td>
+                <td className={styles.itemName} data-label="Item">{order.itemName} ({order.itemPrice}$ x{order.itemQty})</td>
                 <td className={styles.total} data-label="Total">${order.total}</td>
                 <td>   
                   <button
